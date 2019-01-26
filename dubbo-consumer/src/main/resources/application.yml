@@ -1,0 +1,23 @@
+# SPRING PROFILES
+spring:
+  profiles:
+    active: "@profileActive@"
+  application:
+    name: dubbo-consumer
+
+# Dubbo Application
+## The default value of dubbo.application.name is ${spring.application.name}
+dubbo:
+  application:
+    id: dubbo-consumer
+    name: dubbo-consumer
+  registries:
+    zk:
+      address: zookeeper://47.100.162.150:2181
+      default: true
+    redis:
+      address: redis://192.168.199.7:6379
+
+# logger
+logging:
+  config: classpath:logback.xml

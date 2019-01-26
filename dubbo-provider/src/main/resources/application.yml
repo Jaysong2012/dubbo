@@ -1,0 +1,44 @@
+# SPRING PROFILES
+spring:
+  profiles:
+    active: "@profileActive@"
+  application:
+    name: dubbo-provider
+
+# Dubbo Application
+## The default value of dubbo.application.name is ${spring.application.name}
+dubbo:
+  application:
+    name: dubbo-provider
+  scan:
+    base-packages: com.example.dubbo.provider.serviceImpl
+  protocols:
+    rmi:
+      name: rmi
+      port: 1099
+      serialization: hessian2
+    dubbo:
+      name: dubbo
+      port: 20990
+      server: netty
+      client: netty
+      codec: dubbo
+      serialization: hessian2
+      charset: UTF-8
+      threadpool: fixed
+      threads: 100
+      queues: 0
+      iothreads: 9
+      buffer: 8192
+      accepts: 1000
+      payload: 8388608
+  registries:
+    zk:
+      address: zookeeper://47.100.162.150:2181
+      default: true
+    redis:
+      address: redis://192.168.199.7:6379
+
+# logger
+logging:
+  config: classpath:logback.xml
