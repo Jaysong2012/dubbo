@@ -1,0 +1,13 @@
+---
+configVersion: v2.7
+enabled: false
+configs:
+  - addresses: ["0.0.0.0:20880"]
+    side: provider
+    parameters:
+      timeout: 2000
+  - type: balancing
+    enabled: true
+    parameters:
+      method: '*'
+      strategy: random
