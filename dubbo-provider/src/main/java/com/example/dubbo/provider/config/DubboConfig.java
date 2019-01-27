@@ -1,8 +1,11 @@
-package com.example.dubbo.common.config;
+package com.example.dubbo.provider.config;
 
+import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.MethodConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
 import com.example.dubbo.common.service.DemoService;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,10 +23,9 @@ import java.util.List;
 public class DubboConfig {
     //<dubbo:application name="dubbo-provider"></dubbo:application>
 //    @Bean
+//    @ConfigurationProperties(prefix = "dubbo.application")
 //    public ApplicationConfig applicationConfig() {
-//        ApplicationConfig applicationConfig = new ApplicationConfig();
-//        applicationConfig.setName("dubbo-provider");
-//        return applicationConfig;
+//        return new ApplicationConfig();
 //    }
 
     //<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"></dubbo:registry>
@@ -50,7 +52,8 @@ public class DubboConfig {
      <dubbo:method name="inserTest" timeout="1000"></dubbo:method>
      </dubbo:service>
      */
-    @Bean
+    @Bean(name = "demoServiceConfig")
+    @Qualifier("demoServiceConfig")
     public ServiceConfig<DemoService> demoServiceConfig(DemoService demoService){
         ServiceConfig<DemoService> serviceConfig = new ServiceConfig<>();
         serviceConfig.setInterface(DemoService.class);

@@ -9,7 +9,7 @@ spring:
 ## The default value of dubbo.application.name is ${spring.application.name}
 dubbo:
   application:
-    name: dubbo-provider-cd tar
+    name: dubbo-provider-dev
   scan:
     base-packages: com.example.dubbo.provider.serviceImpl
   protocols:
