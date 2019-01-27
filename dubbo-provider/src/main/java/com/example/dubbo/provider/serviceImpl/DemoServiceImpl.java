@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @date 2019/1/26
  * @since 1.0
  */
-@Service(version = "1.0.0",protocol = {"dubbo"},registry = {"zk","redis"},retries = 3,owner = "jaysong")
+@Service(version = "1.0.0",protocol = {"dubbo"},registry = {"zk","redis"},retries = 3,owner = "jaysong",loadbalance = "roundrobin")
 @Slf4j
 public class DemoServiceImpl implements DemoService {
 

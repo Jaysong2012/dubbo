@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2019/1/27
  * @since 1.0
  */
-@Service(version = "1.0.0",protocol = {"dubbo"},registry = {"zk"},cluster = "failfast",retries = 1,owner = "jaysong")
+@Service(version = "1.0.0",protocol = {"dubbo"},registry = {"zk"},cluster = "failfast",owner = "jaysong")
 @Slf4j
 public class WriteServiceImpl implements WriteService {
 
