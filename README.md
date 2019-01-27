@@ -3,7 +3,7 @@ Dubbo教学案例聚合工程---BaseOn Dubbo 2.6.5
 
 ## 聚合工程结构
 ```
-scexample/
+dubbo/
 ├── dubbo-admin                    #dubbo 控制台模块
 ├── dubbo-common                   #dubbo 通用及接口配置模块
 ├── dubbo-consumer                 #dubbo 消费者模块
