@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @date 2019/1/26
  * @since 1.0
  */
-@Service(version = "1.0.0",protocol = {"dubbo"},registry = {"zk","redis"})
+@Service(version = "1.0.0",protocol = {"dubbo"},registry = {"zk","redis"},retries = 3,owner = "jaysong")
 @Slf4j
 public class DemoServiceImpl implements DemoService {
 
@@ -40,7 +40,15 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
-    public DemoResponseDTO inserTest(String name) {
+    public DemoResponseDTO errorTest(String name) {
+        log.info(name);
+        int a = 10/0;
+        return new DemoResponseDTO("000001","异常失败");
+    }
+
+    @Override
+    public DemoResponseDTO retryTest(String key) {
+        log.info("SSSSSSSSSSSSSSS    "+key);
         int a = 10/0;
         return new DemoResponseDTO("000001","异常失败");
     }

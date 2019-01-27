@@ -51,7 +51,7 @@ public class DubboConfig {
      </dubbo:service>
      */
     @Bean
-    public ServiceConfig<DemoService> udemoServiceConfig(DemoService demoService){
+    public ServiceConfig<DemoService> demoServiceConfig(DemoService demoService){
         ServiceConfig<DemoService> serviceConfig = new ServiceConfig<>();
         serviceConfig.setInterface(DemoService.class);
         serviceConfig.setRef(demoService);
@@ -59,7 +59,7 @@ public class DubboConfig {
 
         //配置每一个method的信息
         MethodConfig methodConfig = new MethodConfig();
-        methodConfig.setName("inserTest");
+        methodConfig.setName("errorTest");
         methodConfig.setTimeout(1000);
         methodConfig.setLoadbalance("random");
         methodConfig.setRetries(1);

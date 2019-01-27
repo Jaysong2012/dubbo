@@ -16,12 +16,12 @@ public class DemoResponseDTO implements Serializable {
 
     private String returnCode;
 
-    private String message;
+    private String returnMsg;
 
     public DemoResponseDTO(){}
 
-    public DemoResponseDTO(String returnCode,String message){
+    public DemoResponseDTO(String returnCode,String returnMsg){
         this.returnCode = returnCode;
-        this.message = message;
+        this.returnMsg = returnMsg;
     }
 }

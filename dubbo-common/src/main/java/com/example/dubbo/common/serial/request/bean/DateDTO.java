@@ -1,6 +1,5 @@
 package com.example.dubbo.common.serial.request.bean;
 
-import com.sun.tools.corba.se.idl.InterfaceGen;
 import lombok.Data;
 
 import java.io.Serializable;

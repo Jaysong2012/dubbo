@@ -16,6 +16,8 @@ public interface DemoService {
 
     DemoResponseDTO demoService(Integer intKey, String strKey , DemoRequestDTO demoRquestDTO);
 
-    DemoResponseDTO inserTest(String name);
+    DemoResponseDTO errorTest(String name);
+
+    DemoResponseDTO retryTest(String key);
 
 }

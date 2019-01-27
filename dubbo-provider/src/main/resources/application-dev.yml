@@ -1,25 +1,25 @@
 server:
-  port: 9093
+  port: 9091
 # SPRING PROFILES
 spring:
   application:
-    name: dubbo-provider
+    name: dubbo-provider-dev
 
 # Dubbo Application
 ## The default value of dubbo.application.name is ${spring.application.name}
 dubbo:
   application:
-    name: dubbo-provider
+    name: dubbo-provider-cd tar
   scan:
     base-packages: com.example.dubbo.provider.serviceImpl
   protocols:
     rmi:
       name: rmi
-      port: 1088
+      port: 1099
       serialization: hessian2
     dubbo:
       name: dubbo
-      port: 20880
+      port: 20990
       server: netty
       client: netty
       codec: dubbo
@@ -34,7 +34,7 @@ dubbo:
       payload: 1048576
     hessian:
       name: hessian
-      port: 18899
+      port: 18888
       serialization: hessian2
       payload: 10485760
       charset: UTF-8
