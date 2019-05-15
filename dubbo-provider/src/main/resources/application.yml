@@ -41,7 +41,7 @@ dubbo:
       server: jetty
   registries:
     zk:
-      address: zookeeper://47.100.162.150:2181
+      address: zookeeper://192.168.199.8:2181
       default: true
     redis:
       address: redis://192.168.199.7:6379

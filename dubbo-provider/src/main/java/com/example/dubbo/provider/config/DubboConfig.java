@@ -4,6 +4,7 @@ import com.alibaba.dubbo.config.ApplicationConfig;
 import com.alibaba.dubbo.config.MethodConfig;
 import com.alibaba.dubbo.config.ServiceConfig;
 import com.example.dubbo.common.service.DemoService;
+import com.example.dubbo.provider.component.DynamicDubboPortReaderImpl;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,7 @@ import java.util.List;
  */
 @Configuration
 public class DubboConfig {
+
     //<dubbo:application name="dubbo-provider"></dubbo:application>
 //    @Bean
 //    @ConfigurationProperties(prefix = "dubbo.application")
@@ -77,4 +79,6 @@ public class DubboConfig {
 
         return serviceConfig;
     }
+
+
 }
